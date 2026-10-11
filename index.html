@@ -1,0 +1,140 @@
+<!DOCTYPE html>
+<html lang="id">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<meta name="description" content="Website pribadi Ahmad Zulfikar tentang diri, sekolah, impian, dan harapan masa depan.">
+<title>Ahmad Zulfikar | Website Pribadi</title>
+<style>
+:root{--bg:#080816;--panel:#111126;--text:#f5f5ff;--muted:#c5c5d8;--cyan:#00d9ff;--purple:#9b5cff;--line:#29294b}
+*{box-sizing:border-box;margin:0;padding:0}
+body{min-height:100vh;background:radial-gradient(ellipse at 15% 10%,rgba(0,217,255,.1),transparent 35%),radial-gradient(ellipse at 85% 80%,rgba(155,92,255,.12),transparent 35%),var(--bg);color:var(--text);font-family:Arial,Helvetica,sans-serif;line-height:1.7}
+header{position:sticky;top:0;z-index:10;display:flex;justify-content:space-between;align-items:center;gap:20px;padding:18px 7%;background:rgba(8,8,22,.92);backdrop-filter:blur(12px);border-bottom:1px solid var(--line)}
+.logo{color:var(--cyan);font-weight:800;font-size:1.55rem;letter-spacing:1px;text-decoration:none}
+nav{display:flex;flex-wrap:wrap;gap:8px}
+nav button{background:transparent;color:var(--muted);border:1px solid transparent;border-radius:8px;padding:8px 11px;cursor:pointer;font-size:.92rem}
+nav button:hover,nav button.active{color:var(--cyan);border-color:var(--line);background:var(--panel)}
+main{width:min(100% - 36px,1000px);margin:0 auto}
+.page{display:none;min-height:76vh;padding:64px 0 48px;animation:enter .35s ease}
+.page.active{display:block}
+@keyframes enter{from{opacity:0;transform:translateY(8px)}to{opacity:1;transform:translateY(0)}}
+.hero{min-height:65vh;display:flex;flex-direction:column;justify-content:center;align-items:center;text-align:center}
+.eyebrow{color:var(--cyan);letter-spacing:3px;text-transform:uppercase;font-size:.78rem;font-weight:700}
+h1{font-size:clamp(2.25rem,7vw,4.6rem);line-height:1.15;margin:16px 0 22px}
+h1 span,.accent{color:var(--purple)}
+h2{font-size:clamp(1.8rem,4vw,2.6rem);line-height:1.2;margin:12px 0 18px}
+h3{color:var(--cyan);font-size:1.18rem;margin-bottom:8px}
+.lead{color:var(--muted);font-size:clamp(1rem,2vw,1.15rem);max-width:720px}
+.page-heading{margin-bottom:28px}
+.cards{display:grid;grid-template-columns:repeat(2,minmax(0,1fr));gap:18px;margin-top:26px}
+.card{padding:24px;background:rgba(17,17,38,.9);border:1px solid var(--line);border-radius:16px}
+.card p,.body-copy{color:var(--muted)}
+.button-row{display:flex;justify-content:space-between;flex-wrap:wrap;gap:12px;margin-top:36px}
+.button{display:inline-flex;align-items:center;justify-content:center;gap:8px;border:1px solid var(--cyan);border-radius:9px;padding:12px 19px;background:var(--cyan);color:#080816;text-decoration:none;font-weight:700;cursor:pointer;transition:transform .2s,background .2s,color .2s;font-size:.95rem}
+.button:hover{transform:translateY(-2px);background:var(--purple);border-color:var(--purple);color:white}
+.button.secondary{background:transparent;color:var(--cyan)}
+.button.secondary:hover{background:var(--cyan);color:var(--bg)}
+.quote{margin-top:24px;padding:22px;border-left:3px solid var(--purple);background:rgba(155,92,255,.08);border-radius:0 12px 12px 0;font-size:1.08rem}
+.progress-wrap{display:flex;justify-content:space-between;align-items:center;gap:12px;margin:24px 0;color:var(--muted);font-size:.88rem}
+.progress{height:5px;background:var(--line);border-radius:99px;overflow:hidden;flex:1;max-width:220px}
+.progress span{display:block;height:100%;width:20%;background:linear-gradient(90deg,var(--cyan),var(--purple));transition:width .25s}
+footer{text-align:center;color:#8888a8;border-top:1px solid var(--line);padding:24px 16px;font-size:.9rem}
+@media(max-width:650px){header{align-items:flex-start;flex-direction:column;padding:15px 18px}nav{gap:4px}nav button{padding:7px 8px;font-size:.82rem}main{width:min(100% - 28px,1000px)}.page{padding-top:42px}.cards{grid-template-columns:1fr}.card{padding:20px}.button-row .button{flex:1 1 100%}}
+@media(prefers-reduced-motion:reduce){*,*::before,*::after{scroll-behavior:auto!important;animation-duration:.01ms!important;transition-duration:.01ms!important}}
+</style>
+</head>
+<body>
+<header>
+<a class="logo" href="#beranda" data-page="0">AZ.</a>
+<nav aria-label="Navigasi utama">
+<button type="button" class="active" data-page="0">Beranda</button>
+<button type="button" data-page="1">Tentang Saya</button>
+<button type="button" data-page="2">Impian</button>
+<button type="button" data-page="3">Harapan</button>
+<button type="button" data-page="4">Penutup</button>
+</nav>
+</header>
+<main>
+<section class="page active" id="beranda" aria-labelledby="title-beranda">
+<div class="hero">
+<p class="eyebrow">Selamat datang di website saya</p>
+<h1 id="title-beranda">Halo, saya<br><span>Ahmad Zulfikar</span></h1>
+<p class="lead">Siswa kelas XI SMK Negeri 2 Nabire, jurusan Teknik Komputer dan Jaringan (TKJ). Saya senang mempelajari hal-hal baru, mengeksplorasi teknologi, dan membangun impian untuk masa depan.</p>
+<div class="button-row" style="justify-content:center"><button class="button" type="button" data-next>Kenali Saya Lebih Dekat →</button></div>
+</div>
+</section>
+<section class="page" id="tentang" aria-labelledby="title-tentang">
+<div class="page-heading"><p class="eyebrow">Halaman 02 · Kenali saya</p><h2 id="title-tentang">Tentang <span class="accent">Ahmad Zulfikar</span></h2><p class="lead">Setiap orang memiliki cerita, perjalanan, dan impian. Inilah sedikit cerita tentang diriku.</p></div>
+<div class="cards">
+<article class="card"><h3>👋 Perkenalan</h3><p>Namaku Ahmad Zulfikar. Aku adalah siswa kelas XI di SMK Negeri 2 Nabire. Saat ini aku sedang menjalani perjalanan pendidikan sambil belajar mengenali potensi dan mengembangkan kemampuan diriku.</p></article>
+<article class="card"><h3>🎓 Pendidikan</h3><p>Aku mengambil jurusan Teknik Komputer dan Jaringan (TKJ). Melalui jurusan ini, aku ingin memperluas pengetahuanku tentang komputer, teknologi, dan jaringan sebagai bekal masa depan.</p></article>
+<article class="card"><h3>🎮 Hobi dan Minat</h3><p>Aku senang mempelajari hal-hal yang membuatku penasaran. Aku juga suka bermain game bergenre battle royale dan MOBA. Aku ingin terus menambah wawasan dan mengembangkan diriku.</p></article>
+<article class="card"><h3>🚀 Prinsip Hidup</h3><p>Aku percaya bahwa setiap pengalaman dapat memberikan pelajaran. Aku masih memiliki banyak kekurangan, tetapi aku ingin terus belajar, berani mencoba, dan menjadi pribadi yang lebih baik.</p></article>
+</div>
+<div class="button-row"><button class="button secondary" type="button" data-prev>← Sebelumnya</button><button class="button" type="button" data-next>Halaman Berikutnya →</button></div>
+</section>
+<section class="page" id="impian" aria-labelledby="title-impian">
+<div class="page-heading"><p class="eyebrow">Halaman 03 · Tujuan hidup</p><h2 id="title-impian">Impian <span class="accent">dan Tujuanku</span></h2><p class="lead">Menjadi pribadi yang kaya ilmu, pengalaman, dan keberanian untuk terus bertumbuh.</p></div>
+<article class="card">
+<p class="body-copy">Salah satu impian terbesarku adalah menjadi seseorang yang memiliki banyak ilmu, wawasan, dan pengalaman hidup. Aku ingin terus belajar dari berbagai hal, baik dari keberhasilan maupun kegagalan.</p><br>
+<p class="body-copy">Bagiku, pengalaman baik mengajarkan cara bersyukur, sedangkan pengalaman buruk mengajarkan cara bertahan, memperbaiki diri, dan menjadi lebih bijaksana. Aku tidak ingin berhenti belajar hanya karena pernah melakukan kesalahan atau mengalami kegagalan.</p><br>
+<p class="body-copy">Aku ingin menjadi pribadi yang berani mencoba, mampu berpikir kritis, tidak mudah menyerah, dan selalu terbuka terhadap pengetahuan baru. Aku percaya bahwa ilmu dan pengalaman adalah bekal penting untuk membangun masa depan yang lebih baik.</p>
+<div class="quote">“Aku ingin terus bertumbuh, karena setiap hal yang kupelajari hari ini bisa menjadi bekal untuk hari esok.”</div>
+</article>
+<div class="button-row"><button class="button secondary" type="button" data-prev>← Sebelumnya</button><button class="button" type="button" data-next>Halaman Berikutnya →</button></div>
+</section>
+<section class="page" id="harapan" aria-labelledby="title-harapan">
+<div class="page-heading"><p class="eyebrow">Halaman 04 · Masa depan</p><h2 id="title-harapan">Harapan <span class="accent">untuk Masa Depan</span></h2><p class="lead">Membangun masa depan yang baik dan membahagiakan orang-orang yang berarti.</p></div>
+<article class="card">
+<p class="body-copy">Aku memiliki harapan besar untuk masa depanku. Aku ingin menjadi orang yang sukses, bukan hanya dalam hal materi, tetapi juga dalam ilmu, pengalaman, karakter, dan kemampuan untuk memberikan manfaat bagi orang lain.</p><br>
+<p class="body-copy">Aku ingin membuka banyak peluang untuk diriku sendiri. Entah suatu hari nanti aku menjadi seorang trader, pebisnis, engineer, atau bekerja di bidang lainnya, aku berharap dapat menemukan jalan yang sesuai dengan kemampuan dan perjuanganku.</p><br>
+<p class="body-copy">Namun, di balik semua impian itu, ada satu hal yang paling berarti bagiku: <strong>membanggakan kedua orang tuaku.</strong></p><br>
+<p class="body-copy">Aku membayangkan suatu hari nanti bisa berdiri di hadapan mereka, melihat senyum bangga di wajah mereka, lalu memeluk keduanya dengan penuh rasa syukur. Aku ingin menunjukkan bahwa perjuangan, doa, dan pengorbanan mereka sangat berarti bagiku.</p><br>
+<p class="body-copy">Aku tahu perjalanan menuju kesuksesan tidak selalu mudah. Akan ada kegagalan, kesulitan, dan masa-masa ketika aku merasa lelah. Namun, aku ingin tetap melangkah, belajar dari setiap keadaan, dan tidak melupakan alasan mengapa aku memulai semuanya.</p>
+<div class="quote"><strong>“Aku ingin sukses bukan hanya agar bisa menikmati hasil perjuanganku sendiri, tetapi juga agar bisa membahagiakan orang-orang yang paling berarti dalam hidupku.”</strong></div>
+</article>
+<div class="button-row"><button class="button secondary" type="button" data-prev>← Sebelumnya</button><button class="button" type="button" data-next>Halaman Berikutnya →</button></div>
+</section>
+<section class="page" id="penutup" aria-labelledby="title-penutup">
+<div class="hero">
+<p class="eyebrow">Halaman 05 · Akhir dari awal</p><h1 id="title-penutup">Perjalanan <span>Masih Panjang</span></h1>
+<p class="lead">Terima kasih telah meluangkan waktu untuk mengenal diriku melalui website ini. Aku masih dalam proses belajar, bertumbuh, dan menemukan jalanku sendiri. Aku belum mengetahui seperti apa masa depanku nanti, tetapi aku ingin terus berusaha menjadi pribadi yang lebih baik daripada diriku hari ini.</p>
+<div class="quote">“Aku mungkin belum menjadi siapa-siapa hari ini, tetapi aku sedang berjuang untuk menjadi seseorang yang bisa kubanggakan di masa depan.”</div>
+<p style="margin-top:20px;color:var(--cyan);font-weight:bold">— Ahmad Zulfikar</p>
+<div class="button-row" style="justify-content:center"><button class="button secondary" type="button" data-prev>← Halaman Sebelumnya</button><button class="button" type="button" data-page="0">Kembali ke Beranda ↺</button></div>
+</div>
+</section>
+<div class="progress-wrap" aria-live="polite"><span id="page-count">Halaman 1 dari 5</span><div class="progress" aria-hidden="true"><span id="progress-bar"></span></div></div>
+</main>
+<footer>© 2026 Ahmad Zulfikar · Dibuat dengan semangat belajar dan impian.</footer>
+<script>
+const pages = [...document.querySelectorAll('.page')];
+const navButtons = [...document.querySelectorAll('nav [data-page]')];
+const pageCount = document.getElementById('page-count');
+const progressBar = document.getElementById('progress-bar');
+let currentPage = 0;
+function showPage(index) {
+  currentPage = Math.max(0, Math.min(pages.length - 1, index));
+  pages.forEach((page, i) => {
+    page.classList.toggle('active', i === currentPage);
+    page.setAttribute('aria-hidden', i !== currentPage ? 'true' : 'false');
+  });
+  navButtons.forEach((button, i) => {
+    button.classList.toggle('active', i === currentPage);
+    if (i === currentPage) button.setAttribute('aria-current', 'page');
+    else button.removeAttribute('aria-current');
+  });
+  pageCount.textContent = `Halaman ${currentPage + 1} dari ${pages.length}`;
+  progressBar.style.width = `${((currentPage + 1) / pages.length) * 100}%`;
+  history.replaceState(null, '', `#${pages[currentPage].id}`);
+  window.scrollTo({ top: 0, behavior: 'smooth' });
+}
+document.querySelectorAll('[data-page]').forEach(button => button.addEventListener('click', () => showPage(Number(button.dataset.page))));
+document.querySelectorAll('[data-next]').forEach(button => button.addEventListener('click', () => showPage(currentPage + 1)));
+document.querySelectorAll('[data-prev]').forEach(button => button.addEventListener('click', () => showPage(currentPage - 1)));
+const initialHash = location.hash.slice(1);
+const initialIndex = pages.findIndex(page => page.id === initialHash);
+if (initialIndex >= 0) showPage(initialIndex); else showPage(0);
+</script>
+</body>
+</html>
